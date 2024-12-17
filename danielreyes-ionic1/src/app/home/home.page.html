@@ -1,0 +1,34 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      Figuras geometricas
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+
+  <div id="container">
+    <ion-select [(ngModel)]="figuraSeleccionada" placeholder="Seleccione una figura" class="figuras">
+      <ion-select-option value="triangulo-equilatero">
+        Triangulo equilatero
+      </ion-select-option>
+      <ion-select-option value="triangulo-escaleno">
+        Triangulo escaleno
+      </ion-select-option>
+      <ion-select-option value="circulo">
+        Circulo
+      </ion-select-option>
+    </ion-select>
+  </div>
+
+  <div *ngIf="figuraSeleccionada === 'circulo'">
+    <app-circulo></app-circulo>
+  </div>
+  <div *ngIf="figuraSeleccionada === 'triangulo-escaleno'">
+    <app-triangulo-escaleno></app-triangulo-escaleno>
+  </div>
+  <div *ngIf="figuraSeleccionada === 'triangulo-equilatero'">
+    <app-triangulo-equilatero></app-triangulo-equilatero>
+  </div>
+</ion-content>

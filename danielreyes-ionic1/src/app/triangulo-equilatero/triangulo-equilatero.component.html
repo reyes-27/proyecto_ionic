@@ -1,0 +1,16 @@
+<ion-content [fullscreen]="true">
+  <img src="assets/figuras/equilatero.jpeg" alt="Descripción de la imagen" class="mi-imagen" />
+  <form>
+    <ion-input
+    type="number"
+    [(ngModel)]="txtLadoA"
+    (ionInput)="calcularP()"
+    fill="outline"
+    name="radio"
+    class="lado"
+    >
+    </ion-input>
+  </form>
+  <ion-button (click)="PerimetroValido()">Calcular</ion-button>
+  <ion-text *ngIf="mostrarResultado">El perimetro es: {{perimetro.toFixed(2)}}</ion-text>
+</ion-content>
